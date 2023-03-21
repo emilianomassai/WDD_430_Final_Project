@@ -33,7 +33,7 @@ export class DocumentService {
     // this.http.get<Document[]>('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/documents.json')
 
 
-    this.http.get<{ message: string; documents: Document[] }>('http://127.0.0.1:3000/documents')
+    this.http.get<{ message: string; documents: Document[] }>('http://127.0.0.1:4200/documents')
       .subscribe(
         (documentsData) => {
           this.documents = documentsData.documents;
@@ -106,7 +106,7 @@ export class DocumentService {
     }
 
     // delete from database
-    this.http.delete('http://127.0.0.1:3000/documents/' + document.id)
+    this.http.delete('http://127.0.0.1:4200/documents/' + document.id)
       .subscribe(
         () => {
           this.documents.splice(pos, 1);
@@ -139,7 +139,7 @@ export class DocumentService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     // add to database
-    this.http.post<{ message: string, document: Document }>('http://127.0.0.1:3000/documents/',
+    this.http.post<{ message: string, document: Document }>('http://127.0.0.1:4200/documents/',
       document,
       { headers: headers })
       .subscribe(
@@ -185,7 +185,7 @@ export class DocumentService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     // update database
-    this.http.put('http://127.0.0.1:3000/documents/' + originalDocument.id,
+    this.http.put('http://127.0.0.1:4200/documents/' + originalDocument.id,
       newDocument, { headers: headers })
       .subscribe(
         () => {
@@ -206,7 +206,7 @@ export class DocumentService {
 
     // this.http.put('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/documents.json', documents, { headers: headers })
 
-    this.http.put('http://127.0.0.1:3000/documents/', documents, { headers: headers })
+    this.http.put('http://127.0.0.1:4200/documents/', documents, { headers: headers })
       .subscribe(
         () => {
 

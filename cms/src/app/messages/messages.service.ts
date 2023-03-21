@@ -27,7 +27,7 @@ export class MessagesService {
     // this.http.get<Message[]>('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/messages.json')
     // this.http.get<Message[]>('http://localhost:3000/messages')
 
-    this.http.get<{ message: string; messages: Message[] }>('http://127.0.0.1:3000/messages')
+    this.http.get<{ message: string; messages: Message[] }>('http://127.0.0.1:4200/messages')
       .subscribe(
         (messagesData) => {
           this.messages = messagesData.messages;
@@ -81,7 +81,7 @@ export class MessagesService {
     const strMessage = JSON.stringify(newMessage);
 
     //send request with object and headers
-    this.http.post('http://127.0.0.1:3000/messages/', strMessage, { headers: headers })
+    this.http.post('http://127.0.0.1:4200/messages/', strMessage, { headers: headers })
       //subscribe to response
       .subscribe(
         () => {
@@ -98,7 +98,7 @@ export class MessagesService {
       'Content-Type': 'application/json'
     });
 
-    this.http.put('http://127.0.0.1:3000/messages/', messages, { headers: headers })
+    this.http.put('http://127.0.0.1:4200/messages/', messages, { headers: headers })
       .subscribe(
         () => {
 

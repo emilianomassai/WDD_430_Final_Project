@@ -25,7 +25,7 @@ export class ContactService {
   getContacts() {
 
     // this.http.get<Contact[]>('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/contacts.json')
-    this.http.get<{ message: string; contacts: Contact[] }>('http://127.0.0.1:3000/contacts')
+    this.http.get<{ message: string; contacts: Contact[] }>('http://127.0.0.1:4200/contacts')
       .subscribe(
         (contactsData) => {
           this.contacts = contactsData.contacts;
@@ -83,7 +83,7 @@ export class ContactService {
     newContact.id = '';
     const strContact = JSON.stringify(newContact);
 
-    this.http.post('http://127.0.0.1:3000/contacts/', strContact, { headers: headers })
+    this.http.post('http://127.0.0.1:4200/contacts/', strContact, { headers: headers })
       .subscribe(
         () => {
           this.contactChangedEvent.next(this.contacts.slice());
@@ -112,7 +112,7 @@ export class ContactService {
 
     // const strContact = JSON.stringify(newContact);
 
-    this.http.patch('http://127.0.0.1:3000/contacts/' + originalContact.id
+    this.http.patch('http://127.0.0.1:4200/contacts/' + originalContact.id
       , newContact, { headers: headers })
       .subscribe(
         () => {
@@ -132,7 +132,7 @@ export class ContactService {
     }
     // this.contacts.splice(pos, 1);
     // this.storeContacts();
-    this.http.delete('http://127.0.0.1:3000/contacts/' + contact.id)
+    this.http.delete('http://127.0.0.1:4200/contacts/' + contact.id)
       .subscribe(
         () => {
           this.contactListChangedEvent.next(this.contacts.slice());
@@ -147,7 +147,7 @@ export class ContactService {
       'Content-Type': 'application/json'
     });
 
-    this.http.put('http://127.0.0.1:3000/contacts', contacts, { headers: headers })
+    this.http.put('http://127.0.0.1:4200/contacts', contacts, { headers: headers })
       .subscribe(
         () => {
           this.contactListChangedEvent.next(this.contacts.slice());
