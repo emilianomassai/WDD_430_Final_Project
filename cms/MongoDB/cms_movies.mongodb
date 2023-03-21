@@ -17,7 +17,7 @@ db.movies.insertMany([{
         "name": "The Super Mario Bros. Movie",
 		"description": "The story of The Super Mario Bros. on their journey through the Mushroom Kingdom.",
         "trailerUrl": "https://youtube.com/embed/TnGl01FkMMo",
-        "image": "../assets/images/SuperMarioBros.jpg"
+        "image": "../assets/images/SuperMarioBros.jpeg"
 },
 {
         "_id": ObjectId("58cb2ab6a187c5aa1124e30b"),
