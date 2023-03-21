@@ -10,9 +10,15 @@ let documentSchema = new Schema({
     type: String,
     required: true
   },
-  url: {
+  description: {
+    type: String
+  },
+  trailerUrl: {
+    type: String
+  },
+  image: {
     type: String
   }
 });
 
-module.exports = mongoose.model('Document', documentSchema);
+module.exports = mongoose.model('Movie', documentSchema);

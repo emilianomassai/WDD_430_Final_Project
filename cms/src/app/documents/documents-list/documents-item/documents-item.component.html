@@ -1,11 +1,19 @@
-<a
-  [routerLink]="[document.id]"
-  routerLinkActive="active"
-  class="list-group-item clearfix documentDiv"
-  (click)="onSelected()"
->
-  <div class="pull-left">
-    <p class="list-group-item-heading">{{ document.name }}</p>
-  </div>
-  <span class="pull-right"> </span>
-</a>
+<div class="col-sm-3">
+  <a
+    [routerLink]="[document.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix documentDiv"
+    (click)="onSelected()"
+  >
+    <div class="pull-left">
+      <img
+        src="{{ document.image }}"
+        alt="{{ document.name }}"
+        class="img-fluid d-block mx-auto"
+        style="max-width: 100%"
+      />
+      <!-- <p class="list-group-item-heading">{{ document.name }}</p> -->
+    </div>
+    <span class="pull-right"> </span>
+  </a>
+</div>

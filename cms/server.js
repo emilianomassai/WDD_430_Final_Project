@@ -20,7 +20,7 @@ const documentsRoutes = require('./server/routes/documents')
 // establish a connection to the mongo database
 
 
-mongoose.connect('mongodb+srv://emilianomassai:ug2vGa3MrZ7333GQ@cluster0.cy2xaj1.mongodb.net/cms', {
+mongoose.connect('mongodb+srv://emilianomassai:ug2vGa3MrZ7333GQ@cluster0.cy2xaj1.mongodb.net/cms_movies', {
   useNewUrlParser: true,
 
 }, (err, res) => {

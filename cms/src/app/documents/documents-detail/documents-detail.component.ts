@@ -3,6 +3,7 @@ import { DocumentService } from '../document.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Document } from '../documents.model';
 import { WindRefService } from 'src/app/wind-ref.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-documents-detail',
@@ -19,6 +20,7 @@ export class DocumentsDetailComponent implements OnInit {
     private documentService: DocumentService,
     private windowRefService: WindRefService,
     private route: ActivatedRoute,
+    public sanitizer: DomSanitizer,
     private router: Router) { }
 
   ngOnInit() {
@@ -32,8 +34,8 @@ export class DocumentsDetailComponent implements OnInit {
   }
 
   onView() {
-    if (this.document.url) {
-      this.nativeWindow.open(this.document.url);
+    if (this.document.trailerUrl) {
+      this.nativeWindow.open(this.document.trailerUrl);
     }
   }
 

@@ -33,8 +33,10 @@ router.post('/', (req, res, next) => {
     const document = new Document({
         id: maxDocumentId,
         name: req.body.name,
-        url: req.body.url,
-        description: req.body.description
+        trailerUrl: req.body.trailerUrl,
+        description: req.body.description,
+        image: req.body.image
+
     });
 
     document.save()
@@ -58,7 +60,9 @@ router.put('/:id', (req, res, next) => {
         .then(document => {
             document.name = req.body.name;
             document.description = req.body.description;
-            document.url = req.body.url;
+            document.trailerUrl = req.body.trailerUrl;
+            document.image = req.body.image;
+
 
             Document.updateOne({ id: req.params.id }, document)
                 .then(result => {

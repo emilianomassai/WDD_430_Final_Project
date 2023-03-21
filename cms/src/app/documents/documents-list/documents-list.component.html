@@ -1,21 +1,20 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="row pad-left-right">
-      <span class="pull-left title">Documents</span>
+      <span class="pull-left title">Movies</span>
       <a
         class="btn btn-success pull-right"
         [routerLink]="['new']"
         (click)="onAdd()"
-        >Add Document</a
+        >Add Movie</a
       >
     </div>
   </div>
   <div class="panel-body">
-    <div class="center-panel">
-      <app-documents-item
-        *ngFor="let documentEl of documents"
-        [document]="documentEl"
-      ></app-documents-item>
-    </div>
+    <div class="row"></div>
+    <app-documents-item
+      *ngFor="let documentEl of documents"
+      [document]="documentEl"
+    ></app-documents-item>
   </div>
 </div>
