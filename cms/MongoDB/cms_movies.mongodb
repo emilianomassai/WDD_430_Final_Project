@@ -35,6 +35,60 @@ db.movies.insertMany([{
         "trailerUrl": "https://youtube.com/embed/CaimKeDcudo",
         "image": "../assets/images/Encanto.jpg"
 },
+
+{
+        "_id": ObjectId("58cb2ab6a187c5aa1124e30d"),
+        "id": "4",
+        "name": "The Lion King",
+		"description": "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+        "trailerUrl": "https://youtube.com/embed/7TavVZMewpY",
+        "image": "../assets/images/TheLionKing.jpg"
+},
+
+{
+        "_id": ObjectId("58cb2ab6a187c5aa1124e30e"),
+        "id": "5",
+        "name": "Ratatouille",
+		"description": "A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.",
+        "trailerUrl": "https://youtube.com/embed/-tNqfcZKn6k",
+        "image": "../assets/images/Ratatouille.jpg"
+},
+
+{
+        "_id": ObjectId("58cb2ab6a187c5aa1124e30f"),
+        "id": "6",
+        "name": "Moana",
+		"description": "In Ancient Polynesia, when a terrible curse incurred by the Demigod Maui reaches Moana's island, she answers the Ocean's call to seek out the Demigod to set things right.",
+        "trailerUrl": "https://youtube.com/embed/LKFuXETZUsI",
+        "image": "../assets/images/Moana.jpg"
+},
+
+{
+        "_id": ObjectId("18cb2ab6a187c5aa1124e31a"),
+        "id": "7",
+        "name": "Sing",
+		"description": "In a city of humanoid animals, a hustling theater impresario's attempt to save his theater with a singing competition becomes grander than he anticipates even as its finalists find that their lives will never be the same.",
+        "trailerUrl": "https://youtube.com/embed/9qPgK_u4vX8",
+        "image": "../assets/images/Sing.jpg"
+},
+
+{
+        "_id": ObjectId("18cb2ab6a187c5aa1124e31b"),
+        "id": "8",
+        "name": "The Little Mermaid",
+		"description": "A young mermaid makes a deal with a sea witch to trade her beautiful voice for human legs so she can discover the world above water and impress a prince.",
+        "trailerUrl": "https://youtube.com/embed/kpGo2_d3oYE",
+        "image": "../assets/images/The Little Mermaid.jpg"
+},
+
+{
+        "_id": ObjectId("18cb2ab6a187c5aa1124e31c"),
+        "id": "9",
+        "name": "The Magician's Elephant",
+		"description": "An orphaned boy is told by a fortune teller that an elephant will help him find his lost sister.",
+        "trailerUrl": "https://youtube.com/embed/JvNuYOR7b4w",
+        "image": "../assets/images/The Magician's Elephant.jpg"
+},
     // {
     //     "_id": ObjectId("58cb2ab6a187c5aa1124e310"),
     //     "id": "10",
