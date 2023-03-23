@@ -11,6 +11,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/documents', pathMatch: 'full' },
+
   {
     path: 'documents', component: DocumentsComponent, children: [
 
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
