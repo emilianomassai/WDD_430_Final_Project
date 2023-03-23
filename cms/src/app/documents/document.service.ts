@@ -38,7 +38,7 @@ export class DocumentService {
         (documentsData) => {
           this.documents = documentsData.documents;
           this.maxDocumentId = this.getMaxId();
-          this.documents.sort((a, b) => (a.name < b.name) ? 1 : (a.name > b.name) ? -1 : 0);
+          this.documents.sort((a, b) => (a.name > b.name) ? 1 : (a.name < b.name) ? -1 : 0);
 
           console.log(documentsData)
 
