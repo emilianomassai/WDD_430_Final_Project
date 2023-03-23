@@ -8,12 +8,29 @@
         (click)="onAdd()"
         >Add Movie</a
       >
+      <br />
+      <hr />
+      <div class="input-group pull-left col-xs-4">
+        <input
+          type="text"
+          ngModel
+          (keyup)="search(searchBox.value)"
+          placeholder="Look for a movie ..."
+          #searchBox="ngModel"
+          class="form-control"
+        />
+        <div (click)="search(searchBox.value)"></div>
+      </div>
     </div>
   </div>
+
   <div class="panel-body">
     <div class="row"></div>
     <app-documents-item
-      *ngFor="let documentEl of documents"
+      *ngFor="
+        let documentEl of documents | moviesFilter : searchBox.value;
+        let i = index
+      "
       [document]="documentEl"
     ></app-documents-item>
   </div>

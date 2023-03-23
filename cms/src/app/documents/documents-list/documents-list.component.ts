@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 export class DocumentsListComponent implements OnInit, OnDestroy {
   @Output() selectedDocumentEvent = new EventEmitter<Document>();
 
+  term: String = '';
+
 
   documents: Document[] = [];
 
@@ -41,6 +43,11 @@ export class DocumentsListComponent implements OnInit, OnDestroy {
     // let testDocument = new Document(this.documentService.getMaxId().toString(), 'The Book of Mormon', 'Another Testament of Jesus Christ', 'https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng', 'child')
     // this.documentService.addDocument(testDocument);
 
+  }
+
+  search(value: String) {
+
+    this.term = value;
   }
 
 
