@@ -9,19 +9,19 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
-import { DocumentsComponent } from './documents/documents.component';
+import { MoviesComponent } from './movies/movies.component';
 import { MessageItemComponent } from './messages/message-item/message-item.component';
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
-import { DocumentsDetailComponent } from './documents/documents-detail/documents-detail.component';
-import { DocumentsListComponent } from './documents/documents-list/documents-list.component';
-import { DocumentsItemComponent } from './documents/documents-list/documents-item/documents-item.component';
+import { MoviesDetailComponent } from './movies/movies-detail/movies-detail.component';
+import { MoviesListComponent } from './movies/movies-list/movies-list.component';
+import { MoviesItemComponent } from './movies/movies-list/movies-item/movies-item.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { DndModule } from 'ng2-dnd';
 import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
-import { MoviesFilterPipe } from './documents/movies-filter.pipe';
+import { MoviesFilterPipe } from './movies/movies-filter.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -33,15 +33,15 @@ import { HttpClientModule } from '@angular/common/http';
     ContactListComponent,
     ContactDetailComponent,
     ContactItemComponent,
-    DocumentsComponent,
+    MoviesComponent,
+    MoviesDetailComponent,
+    MovieEditComponent,
+    MoviesListComponent,
+    MoviesItemComponent,
     MessageItemComponent,
     MessageEditComponent,
     MessageListComponent,
-    DocumentsDetailComponent,
-    DocumentsListComponent,
-    DocumentsItemComponent,
     DropdownDirective,
-    DocumentEditComponent,
     ContactEditComponent,
     ContactsFilterPipe,
     MoviesFilterPipe

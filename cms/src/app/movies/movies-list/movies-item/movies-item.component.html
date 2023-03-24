@@ -1,0 +1,19 @@
+<div class="col-sm-4">
+  <a
+    [routerLink]="[movie.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix movieDiv"
+    (click)="onSelected()"
+  >
+    <div class="pull-left">
+      <img
+        src="{{ movie.image }}"
+        alt="{{ movie.name }}"
+        class="img-fluid d-block mx-auto"
+        style="max-width: 100%"
+      />
+      <!-- <p class="list-group-item-heading">{{ movie.name }}</p> -->
+    </div>
+    <span class="pull-right"> </span>
+  </a>
+</div>

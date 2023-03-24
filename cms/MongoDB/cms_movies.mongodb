@@ -214,7 +214,7 @@ db.movies.insertMany([{
 ]);
 
 db.sequences.insertMany([{
-    "maxDocumentId": 100,
+    "maxMovieId": 100,
     "maxMessageId": 100,
     "maxContactId": 100
 }]);

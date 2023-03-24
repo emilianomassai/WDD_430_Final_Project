@@ -15,7 +15,7 @@ var index = require('./server/routes/app');
 var index = require('./server/routes/app');
 const messageRoutes = require('./server/routes/messages')
 const contactRoutes = require('./server/routes/contacts')
-const documentsRoutes = require('./server/routes/documents')
+const moviesRoutes = require('./server/routes/movies')
 
 // establish a connection to the mongo database
 
@@ -64,7 +64,7 @@ app.use(express.static(path.join(__dirname, 'dist/WDD_430')));
 app.use('/', index);
 app.use('/messages', messageRoutes);
 app.use('/contacts', contactRoutes);
-app.use('/documents', documentsRoutes);
+app.use('/movies', moviesRoutes);
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {

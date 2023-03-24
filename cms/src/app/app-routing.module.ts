@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DocumentsComponent } from './documents/documents.component';
+import { MoviesComponent } from './movies/movies.component';
 
 import { ContactsComponent } from './contacts/contacts.component';
-import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
-import { DocumentsDetailComponent } from './documents/documents-detail/documents-detail.component';
+import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
+import { MoviesDetailComponent } from './movies/movies-detail/movies-detail.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/documents', pathMatch: 'full' },
+  { path: '', redirectTo: '/Movies', pathMatch: 'full' },
 
   {
-    path: 'documents', component: DocumentsComponent, children: [
+    path: 'Movies', component: MoviesComponent, children: [
 
-      { path: 'new', component: DocumentEditComponent },
-      { path: ':id', component: DocumentsDetailComponent },
-      { path: ':id/edit', component: DocumentEditComponent }
+      { path: 'new', component: MovieEditComponent },
+      { path: ':id', component: MoviesDetailComponent },
+      { path: ':id/edit', component: MovieEditComponent }
 
     ]
   },

@@ -1,0 +1,56 @@
+<div class="panel panel-default" xmlns="http://www.w3.org/1999/html">
+  <div class="panel-heading">
+    <div class="panel-heading">
+      <h4 class="title margin-left-right">{{ movie.name }}</h4>
+      <div class="row">
+        <span class="pull-left">
+          <img
+            src="{{ movie.image }}"
+            alt="{{ movie.name }}"
+            class="img-fluid d-block mx-auto"
+            style="max-width: 100%"
+          />
+        </span>
+        <span class="pull-right btn-toolbar" style="margin-top: 35px">
+          <div class="row pull-right margin-left-right">
+            <!-- <a class="btn btn-primary" (click)="onView()">Trailer</a> -->
+            <a
+              [routerLink]="['/movies', movie.id, 'edit']"
+              class="btn btn-info"
+              (click)="onEdit()"
+              >Edit</a
+            >
+            <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="pad-left-right">
+        <div class="row">
+          <label>Description:</label>
+          <br />
+          <span class="label-value">{{ movie.description }}</span>
+          <hr />
+        </div>
+      </div>
+      <div class="pad-left-right">
+        <div class="row">
+          <label>Trailer:</label>
+          <br />
+          <div class="videoWrapperOuter">
+            <div class="videoWrapperInner">
+              <iframe
+                [src]="
+                  sanitizer.bypassSecurityTrustResourceUrl(movie.trailerUrl)
+                "
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

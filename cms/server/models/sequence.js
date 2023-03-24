@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let sequenceSchema = new Schema({
-  maxDocumentId: {
+  maxMovieId: {
     type: Number,
     required: true
   },
