@@ -10,10 +10,10 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
 import { MessageListComponent } from './messages/message-list/message-list.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/Movies', pathMatch: 'full' },
+  { path: '', redirectTo: '/movies', pathMatch: 'full' },
 
   {
-    path: 'Movies', component: MoviesComponent, children: [
+    path: 'movies', component: MoviesComponent, children: [
 
       { path: 'new', component: MovieEditComponent },
       { path: ':id', component: MoviesDetailComponent },

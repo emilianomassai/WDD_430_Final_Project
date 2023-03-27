@@ -1,4 +1,8 @@
 // MongoDB Playground
+
+// mongodb+srv://emilianomassai:ug2vGa3MrZ7333GQ@cluster0.cy2xaj1.mongodb.net/test
+
+
 // To disable this template go to Settings | MongoDB | Use Default Template For Playground.
 // Make sure you are connected to enable completions and to be able to run a playground.
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
