@@ -52,7 +52,6 @@ export class MoviesDetailComponent implements OnInit, OnDestroy {
   }
 
 
-  // TO CHANGE THIS WITH REAL DATA
   onEdit() {
 
   }

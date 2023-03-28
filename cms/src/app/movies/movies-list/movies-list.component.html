@@ -25,13 +25,14 @@
   </div>
 
   <div class="panel-body">
-    <div class="row"></div>
-    <app-movies-item
-      *ngFor="
-        let movieEl of movies | moviesFilter : searchBox.value;
-        let i = index
-      "
-      [movie]="movieEl"
-    ></app-movies-item>
+    <div class="row">
+      <app-movies-item
+        *ngFor="
+          let movieEl of movies | moviesFilter : searchBox.value;
+          let i = index
+        "
+        [movie]="movieEl"
+      ></app-movies-item>
+    </div>
   </div>
 </div>
