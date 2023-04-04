@@ -18,11 +18,11 @@ export class MessageItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    let contact: Contact = this.contactService.getContact(this.message.sender);
+    // let contact: Contact = this.contactService.getContact(this.message.sender);
 
-    this.messageSender = contact ? contact.name : 'Contact not found';
-    // this.messageSender = contact.name;
-    console.log("Contact sender: " + this.messageSender)
+    // this.messageSender = contact ? contact.title : 'Contact not found';
+    // // this.messageSender = contact.name;
+    // console.log("Contact sender: " + this.messageSender)
   }
 
 }

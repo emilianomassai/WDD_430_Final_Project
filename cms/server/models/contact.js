@@ -6,23 +6,22 @@ let contactSchema = new Schema({
     type: String,
     required: true
   },
-  name: {
+  title: {
     type: String,
     required: true
   },
-  email: {
+  overview: {
     type: String
   },
-  phone: {
+  release_date: {
     type: String
   },
-  imageUrl: {
+  poster_path: {
     type: String
   },
-  group: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Contact'
-  }]
+  vote_average: {
+    type: String
+  },
 });
 
 module.exports = mongoose.model('Contact', contactSchema);

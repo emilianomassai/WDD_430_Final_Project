@@ -1,43 +1,21 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="row pad-left-right">
-          <span class="title">Contacts</span>
-        </div>
-        <div class="row">
-          <div class="input-group pull-left pad-left-right col-xs-7">
-            <input
-              type="text"
-              ngModel
-              (keyup)="search(searchBox.value)"
-              placeholder="Enter a Search value"
-              #searchBox="ngModel"
-              class="form-control"
-            />
-            <div (click)="search(searchBox.value)"></div>
-          </div>
-          <div class="pull-right pad-left-right">
-            <a class="btn btn-success" [routerLink]="['new']">New Contact</a>
-          </div>
-        </div>
-      </div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row pad-left-right">
+      <span class="pull-left title">Trending now</span>
+      <br />
+      <hr />
+      <p>
+        Here you can find the movies that are trending at the moment. The data
+        is taken from themoviedb.org using their API.
+      </p>
+      <hr />
       <div class="panel-body">
         <div class="row">
-          <div class="col-xs-12">
-            <app-contact-item
-              *ngFor="
-                let contactEl of contacts | contactsFilter : searchBox.value;
-                let i = index
-              "
-              [contact]="contactEl"
-              dnd-draggable
-              [dragEnabled]="true"
-              [dragData]="contactEl"
-              [dropZones]="['contactGroup']"
-            >
-            </app-contact-item>
-          </div>
+          <app-contact-item
+            *ngFor="let contact of topRated; let i = index"
+            [contact]="contact"
+          >
+          </app-contact-item>
         </div>
       </div>
     </div>

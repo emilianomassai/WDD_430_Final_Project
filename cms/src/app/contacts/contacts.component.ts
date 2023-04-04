@@ -17,6 +17,14 @@ export class ContactsComponent implements OnInit {
     this.contactService.contactChangedEvent.subscribe((contact: Contact) => {
       this.selectedContact = contact;
     })
+
+
+    this.contactService.findTrending().subscribe(response => {
+
+    }, error => {
+
+    });
   }
+
 
 }

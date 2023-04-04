@@ -1,8 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { MOCKCONTACTS } from './MOCKCONTACTS';
+// import { MOCKCONTACTS } from './MOCKCONTACTS';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contact } from './contacts.model';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,8 @@ export class ContactService {
   contactListChangedEvent = new Subject<Contact[]>();
 
   maxContactId: number;
+  public data: any = [];
+  public topRated: any = [];
 
   private contacts: Contact[] = [];
 
@@ -22,37 +24,97 @@ export class ContactService {
     this.maxContactId = this.getMaxId();
   }
 
+
+  findTrending() {
+    return this.http.get('https://api.themoviedb.org/3/trending/all/day?api_key=f4ec058abc3d746728270f736f4851fd');
+
+  }
+
   getContacts() {
 
-    // this.http.get<Contact[]>('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/contacts.json')
-    this.http.get<{ message: string; contacts: Contact[] }>('http://127.0.0.1:4200/contacts')
-      .subscribe(
-        (contactsData) => {
-          this.contacts = contactsData.contacts;
-          this.maxContactId = this.getMaxId();
-          console.log(contactsData.contacts)
+    // // this.http.get<Contact[]>('https://cms-wdd430-58d60-default-rtdb.firebaseio.com/contacts.json')
+    // this.http.get<{ message: string; contacts: Contact[] }>('http://127.0.0.1:4200/contacts')
+    //   .subscribe(
+    //     (contactsData) => {
+    //       this.contacts = contactsData.contacts;
+    //       this.maxContactId = this.getMaxId();
+    //       console.log(contactsData.contacts)
 
-          // this.contacts.sort((a, b) => (a.name < b.name) ? 1 : (a.name > b.name) ? -1 : 0);
-          this.contactListChangedEvent.next(this.contacts.slice());
+    //       // this.contacts.sort((a, b) => (a.name < b.name) ? 1 : (a.name > b.name) ? -1 : 0);
+    //       this.contactListChangedEvent.next(this.contacts.slice());
 
-          (error: any) => {
-            console.log(error);
-          }
-        })
+    //       (error: any) => {
+    //         console.log(error);
+    //       }
+    //     })
   }
 
   // getContacts(): Contact[] { return this.contacts.slice(); }
 
 
   getContact(id: string): Contact {
-    for (const contact of this.contacts) {
-      if (contact.id === id) {
-        return contact;
-      }
-    }
+    // const url = 'https://api.themoviedb.org/3/'
+    // const apiKey = 'f4ec058abc3d746728270f736f4851fd'
+    // console.log("`${url}contact/${id}?api_key=${apiKey}`" + `${url}movie/${id}?api_key=${apiKey}`)
+
+    // return this.http.get(`${url}movie/${id}?api_key=${apiKey}`);
+
+
+    // const url = 'https://api.themoviedb.org/3/trending/all/day?api_key=f4ec058abc3d746728270f736f4851fd'
+    // this.http.get(url).subscribe((res) => {
+    //   this.data = res
+    //   this.topRated = this.data.results
+
+
+    //   for (let i = 0; i < this.topRated.length; i++) {
+    //     if (this.topRated[i].id == id) {
+
+    //       console.log("Movie selected")
+    //       console.log("Id: " + this.topRated[i].id)
+    //       console.log("Title: " + this.topRated[i].title)
+    //       console.log("Overview: " + this.topRated[i].overview)
+    //       console.log("Poster: " + this.topRated[i].poster_path)
+    //       console.log("Vote: " + this.topRated[i].vote_average)
+    //       console.log("Release: " + this.topRated[i].release_date)
+
+    //       console.log('topRated[i]' + this.topRated[i])
+    //       return this.topRated[i];
+    //     }
+    //   }
+    // })
+
     return null!;
 
   }
+
+  // getContact(id: string): Contact {
+
+  //   const url = 'https://api.themoviedb.org/3/trending/all/day?api_key=f4ec058abc3d746728270f736f4851fd'
+  //   this.http.get(url).subscribe((res) => {
+  //     this.data = res
+  //     this.topRated = this.data.results
+
+
+  //     for (let i = 0; i < this.topRated.length; i++) {
+  //       if (this.topRated[i].id == id) {
+
+  //         console.log("Movie selected")
+  //         console.log("Id: " + this.topRated[i].id)
+  //         console.log("Title: " + this.topRated[i].title)
+  //         console.log("Overview: " + this.topRated[i].overview)
+  //         console.log("Poster: " + this.topRated[i].poster_path)
+  //         console.log("Vote: " + this.topRated[i].vote_average)
+  //         console.log("Release: " + this.topRated[i].release_date)
+
+  //         return this.topRated[i];
+  //       }
+  //     }
+  //   })
+
+  //   return null!;
+
+  // }
+
 
   getMaxId(): number {
     let maxId = 0;
@@ -122,21 +184,21 @@ export class ContactService {
   }
 
   deleteContact(contact: Contact) {
-    if (contact === null || contact === undefined) {
-      return;
-    }
-    const pos = this.contacts.indexOf(contact);
+    // if (contact === null || contact === undefined) {
+    //   return;
+    // }
+    // const pos = this.contacts.indexOf(contact);
 
-    if (pos < 0) {
-      return;
-    }
-    // this.contacts.splice(pos, 1);
-    // this.storeContacts();
-    this.http.delete('http://127.0.0.1:4200/contacts/' + contact.id)
-      .subscribe(
-        () => {
-          this.contactListChangedEvent.next(this.contacts.slice());
-        });
+    // if (pos < 0) {
+    //   return;
+    // }
+    // // this.contacts.splice(pos, 1);
+    // // this.storeContacts();
+    // this.http.delete('http://127.0.0.1:4200/contacts/' + contact.id)
+    //   .subscribe(
+    //     () => {
+    //       this.contactListChangedEvent.next(this.contacts.slice());
+    //     });
 
   }
 
@@ -147,11 +209,12 @@ export class ContactService {
       'Content-Type': 'application/json'
     });
 
-    this.http.put('http://127.0.0.1:4200/contacts', contacts, { headers: headers })
+    this.http.put('https://api.themoviedb.org/3/trending/all/day?api_key=f4ec058abc3d746728270f736f4851fd', contacts, { headers: headers })
       .subscribe(
         () => {
           this.contactListChangedEvent.next(this.contacts.slice());
         }
       )
   }
+
 }

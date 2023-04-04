@@ -48,11 +48,11 @@ router.post('/', (req, res, next) => {
 
     const contact = new Contact({
         id: maxContactId,
-        name: req.body.name,
-        email: req.body.email,
-        phone: req.body.phone,
-        imageUrl: req.body.imageUrl,
-        group: req.body.group
+        title: req.body.title,
+        overview: req.body.overview,
+        release_date: req.body.release_date,
+        poster_path: req.body.poster_path,
+        vote_average: req.body.vote_average
     });
 
     if (contact.group && contact.group.length > 0) {
@@ -76,11 +76,11 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
     Contact.findOne({ id: req.params.id })
         .then(contact => {
-            contact.name = req.body.name;
-            contact.email = req.body.email;
-            contact.phone = req.body.phone;
-            contact.imageUrl = req.body.imageUrl;
-            contact.group = req.body.group;
+            contact.title = req.body.title;
+            contact.overview = req.body.overview;
+            contact.release_date = req.body.release_date;
+            contact.poster_path = req.body.poster_path;
+            contact.vote_average = req.body.vote_average;
 
 
             Contact.updateOne({ id: req.params.id }, contact)

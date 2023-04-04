@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 import { Contact } from '../../contacts.model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-item',
@@ -8,16 +8,16 @@ import { Contact } from '../../contacts.model';
   styleUrls: ['./contact-item.component.css']
 })
 export class ContactItemComponent {
-@Input() contact!: Contact;
-@Output() contactSelected = new EventEmitter<void>();
-  
-constructor() { }
+  @Input() contact!: Contact;
+  @Output() contactSelected = new EventEmitter<void>();
 
-ngOnInit() {
-}
+  constructor(public sanitizer: DomSanitizer) { }
 
-onSelected() {
-  this.contactSelected.emit();
-}
+  ngOnInit() {
+  }
+
+  onSelected() {
+    this.contactSelected.emit();
+  }
 
 }

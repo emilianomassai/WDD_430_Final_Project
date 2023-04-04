@@ -1,18 +1,22 @@
-<a
-  [routerLink]="[contact.id]"
-  routerLinkActive="active"
-  class="list-group-item clearfix"
-  (click)="onSelected()"
->
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ contact.name }}</h4>
-  </div>
-  <span class="pull-right">
-    <img
-      class="img-responsive"
-      [src]="contact.imageUrl"
-      alt="{{ contact.name }}"
-      style="max-height: 100px"
-    />
-  </span>
-</a>
+<div class="col-sm-4">
+  <a
+    [routerLink]="[contact.id]"
+    routerLinkActive="active"
+    class="list-group-item clearfix movieDiv"
+    (click)="onSelected()"
+  >
+    <div class="pull-left">
+      <img
+        [src]="
+          sanitizer.bypassSecurityTrustResourceUrl(
+            'http://image.tmdb.org/t/p/w500' + contact.poster_path
+          )
+        "
+        alt="{{ contact.title }}"
+        class="img-fluid d-block mx-auto"
+        style="max-width: 100%"
+      />
+    </div>
+    <span class="pull-right"> </span>
+  </a>
+</div>
