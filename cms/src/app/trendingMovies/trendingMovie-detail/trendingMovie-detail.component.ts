@@ -40,6 +40,7 @@ export class TrendingMovieDetailComponent implements OnInit {
           this.data = res
           this.topRated = this.data.results
 
+          console.log('response ' + this.data.results)
           for (let i = 0; i < this.topRated.length; i++) {
             if (this.topRated[i].id == this.id) {
 
