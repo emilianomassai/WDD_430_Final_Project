@@ -1,0 +1,30 @@
+<div class="panel panel-default" xmlns="http://www.w3.org/1999/html">
+  <div class="panel-heading">
+    <h4 class="title margin-left-right">{{ trendingMovie.title }}</h4>
+    <div class="row">
+      <span class="pull-left">
+        <img
+          [src]="
+            sanitizer.bypassSecurityTrustResourceUrl(
+              'http://image.tmdb.org/t/p/w500' + trendingMovie.poster_path
+            )
+          "
+          alt="{{ trendingMovie.title }}"
+          class="img-fluid d-block mx-auto"
+          style="max-width: 100%"
+        />
+      </span>
+
+      <span class="pull-right btn-toolbar" style="margin-top: 35px"> </span>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <label>Description:</label>
+    <br />
+    <p>{{ trendingMovie.overview }}</p>
+    <hr />
+
+    <p>Vote: {{ trendingMovie.vote_average | number : "1.0-1" }}/10</p>
+  </div>
+</div>

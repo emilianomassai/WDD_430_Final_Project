@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
 
-import { ContactsComponent } from './contacts/contacts.component';
+import { TrendingMoviesComponent } from './trendingMovies/trendingMovies.component';
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 import { MoviesDetailComponent } from './movies/movies-detail/movies-detail.component';
-import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
-import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { TrendingMovieDetailComponent } from './trendingMovies/trendingMovie-detail/trendingMovie-detail.component';
+import { TrendingMovieEditComponent } from './trendingMovies/trendingMovie-edit/trendingMovie-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
 
 const appRoutes: Routes = [
@@ -22,13 +22,18 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'messages', component: MessageListComponent },
+
+  { path: '', redirectTo: '/trendingMovies', pathMatch: 'full' },
+
   {
-    path: 'contacts', component: ContactsComponent, children: [
-      { path: 'new', component: ContactEditComponent },
-      { path: ':id', component: ContactDetailComponent },
-      { path: ':id/edit', component: ContactEditComponent }
+    path: 'trendingMovies', component: TrendingMoviesComponent, children: [
+
+      { path: 'new', component: TrendingMovieEditComponent },
+      { path: ':id', component: TrendingMovieDetailComponent },
+      { path: ':id/edit', component: TrendingMovieEditComponent }
+
     ]
-  }
+  },
 ];
 
 @NgModule({

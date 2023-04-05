@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="row pad-left-right">
+      <span class="pull-left title">Trending now</span>
+      <br />
+      <hr />
+      <p>
+        Here you can find the movies that are trending at the moment. The data
+        is taken from themoviedb.org using their API.
+      </p>
+      <hr />
+      <div class="panel-body">
+        <div class="row">
+          <app-trendingMovie-item
+            *ngFor="let trendingMovie of topRated; let i = index"
+            [trendingMovie]="trendingMovie"
+          >
+          </app-trendingMovie-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

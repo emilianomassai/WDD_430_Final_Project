@@ -14,8 +14,9 @@ var index = require('./server/routes/app');
 // Get defined routing files
 var index = require('./server/routes/app');
 const messageRoutes = require('./server/routes/messages')
-const contactRoutes = require('./server/routes/contacts')
+const trendingMovieRoutes = require('./server/routes/trendingMovies')
 const moviesRoutes = require('./server/routes/movies')
+
 
 // establish a connection to the mongo database
 
@@ -63,7 +64,7 @@ app.use(express.static(path.join(__dirname, 'dist/WDD_430')));
 // Tell express to map the default route ('/') to the index route
 app.use('/', index);
 app.use('/messages', messageRoutes);
-app.use('/contacts', contactRoutes);
+app.use('/trendingMovies', trendingMovieRoutes);
 app.use('/movies', moviesRoutes);
 
 // Tell express to map all other non-defined routes back to the index page

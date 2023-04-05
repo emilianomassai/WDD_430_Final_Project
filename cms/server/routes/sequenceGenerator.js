@@ -2,7 +2,7 @@ var Sequence = require('../models/sequence');
 
 var maxMovieId;
 var maxMessageId;
-var maxContactId;
+var maxTrendingMovieId;
 var sequenceId = null;
 
 function SequenceGenerator() {
@@ -19,7 +19,7 @@ function SequenceGenerator() {
             sequenceId = sequence._id;
             maxMovieId = sequence.maxMovieId;
             maxMessageId = sequence.maxMessageId;
-            maxContactId = sequence.maxContactId;
+            maxTrendingMovieId = sequence.maxTrendingMovieId;
         });
 }
 
@@ -39,10 +39,10 @@ SequenceGenerator.prototype.nextId = function (collectionType) {
             updateObject = { maxMessageId: maxMessageId };
             nextId = maxMessageId;
             break;
-        case 'contacts':
-            maxContactId++;
-            updateObject = { maxContactId: maxContactId };
-            nextId = maxContactId;
+        case 'trendingMovies':
+            maxTrendingMovieId++;
+            updateObject = { maxTrendingMovieId: maxTrendingMovieId };
+            nextId = maxTrendingMovieId;
             break;
         default:
             return -1;

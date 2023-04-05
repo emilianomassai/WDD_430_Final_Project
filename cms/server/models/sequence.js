@@ -10,10 +10,12 @@ let sequenceSchema = new Schema({
     type: Number,
     required: true
   },
-  maxContactId: {
+  maxTrendingMovieId: {
     type: Number,
     required: true
   }
 });
 
 module.exports = mongoose.model('Sequence', sequenceSchema);
+
+
